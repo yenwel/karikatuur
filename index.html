@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caricature Sprint Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Caricature Sprint Trainer</h1>
+      <p>Practice fast caricature drawing with timed rounds and side-by-side comparison.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>1) Select Face Reference Photo</h2>
+        <input id="referenceInput" type="file" accept="image/*" />
+        <div class="image-frame">
+          <img id="referenceImage" alt="Reference face will appear here" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Timer</h2>
+        <div class="timer-controls">
+          <label for="minutes">Minutes:</label>
+          <input id="minutes" type="number" min="1" max="60" value="3" />
+          <button id="startTimer">Start</button>
+          <button id="pauseTimer">Pause</button>
+          <button id="resetTimer">Reset</button>
+        </div>
+        <p id="timerDisplay" class="timer">03:00</p>
+      </section>
+
+      <section class="panel">
+        <h2>3) Add Caricature Result</h2>
+        <p>Upload a photo of your paper drawing from your phone camera or gallery.</p>
+        <input id="caricatureInput" type="file" accept="image/*" />
+      </section>
+
+      <section class="panel comparison">
+        <h2>4) Side-by-Side Comparison</h2>
+        <div class="comparison-grid">
+          <figure>
+            <figcaption>Reference Face</figcaption>
+            <img id="comparisonReference" alt="Reference image" />
+          </figure>
+          <figure>
+            <figcaption>Latest Caricature</figcaption>
+            <img id="comparisonCaricature" alt="Caricature image" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Saved Caricatures (Local Device)</h2>
+        <p>Your uploaded caricatures are stored in your browser local storage.</p>
+        <div id="gallery" class="gallery"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
